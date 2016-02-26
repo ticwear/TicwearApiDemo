@@ -1,2 +1,1 @@
-# TicwearApiDemo
-Sample code of Ticwear API usage.
+崔健的start project

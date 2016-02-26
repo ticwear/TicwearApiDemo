@@ -1,0 +1,90 @@
+<resources>
+    <string name="app_name">MobvoiApiDemo</string>
+    <string name="title_1">"数据传输"</string>
+    <string name="title_2">"传感器"</string>
+    <string name="title_3">"地理位置"</string>
+    <string name="title_4">"健康数据"</string>
+    <string name="title_5">"天气"</string>
+    <string name="title_6">"手势"</string>
+    <string name="title_7">"语音识别"</string>
+    <string name="title_8">"语音合成"</string>
+    <string name="title_9">"语义"</string>
+    <string name="title_10">"搜索"</string>
+    <string name="title_11">"快捷卡片"</string>
+    <string name="title_12">"挠挠"</string>
+    <string name="title_13">"UI库demo"</string>
+    <string name="details">up to date.</string>
+    <string name="data">Data Transfer</string>
+    <!-- data layer -->
+    <string name="data_1">NodeApi</string>
+    <string name="data_2">MessageApi</string>
+    <string name="data_3">DataApi</string>
+
+    <!-- data api -->
+    <string name="start_wearable_activity">Start Wearable Activity</string>
+    <string name="start">Start</string>
+    <string name="take_photo">Take a Photo</string>
+    <string name="send_photo">Send Photo</string>
+    <string name="action_settings">Setting</string>
+    <string name="title_activity_node_api_demo">NodeApi</string>
+    <string name="title_activity_message_api_demo">MessageApi</string>
+    <string name="title_activity_data_item">DataApi</string>
+    <!-- NodeApi -->
+    <string name="check_button">Check Nodes</string>
+    <!-- MessageApi -->
+    <string name="control_button">Start A Wearable Activity</string>
+    <!-- SensorsActivity -->
+    <string name="title_activity_sensor">Sensors</string>
+    <string name="sensor_x">X is&#160;</string>
+    <string name="sensor_y">Y is&#160;</string>
+    <string name="sensor_z">Z is&#160;</string>
+    <!-- GeoActivity -->
+    <string name="title_activity_geo">Location</string>
+    <string name="start_location">Start Location Activity</string>
+    <!-- StepActivity -->
+    <string name="title_activity_step">Steps</string>
+    <string name="start_step">Start Step Activity</string>
+    <string name="step_text">当前步数:</string>
+    <!-- WeatherActivity -->
+    <string name="title_activity_weather">Weather</string>
+    <string name="start_weather">Start Weather Activity</string>
+    <string name="weather_text">Weather</string>
+    <!-- GestureActivity -->
+    <string name="title_activity_gesture">Gesture</string>
+    <string name="start_gesture">Start Gesture Activity</string>
+    <string name="gesture_text">Gesture</string>
+    <string name="gesture_now">当前手势:</string>
+    <!-- VoiceInputActivity -->
+    <string name="title_activity_voice_input">VoiceInput</string>
+    <string name="start_voice">Start VoiceInput Activity</string>
+    <string name="voice_text">语音识别</string>
+    <string name="voice_now">当前语音:</string>
+    <!-- Text2VoiceActivity -->
+    <string name="title_activity_text2_voice">Text2Voice</string>
+    <string name="start_text2voice">Play on Wear</string>
+    <string name="start_text2_activity">Start Text2Voice Activity</string>
+    <string name="Text_text2voice">TTS</string>
+    <string name="start_play">Play on Phone</string>
+    <string name="next_play">Play Next</string>
+    <!-- SemanticActivity -->
+    <string name="title_activity_semantic">Semantic</string>
+    <string name="help_text">说 明</string>
+    <string name="example_text">此处以查询航班为例，展示Semantic Intent的使用方法。
+        具体操作为：在手表端的表盘界面右划唤起语音助手，说一句与航班查询有关的语音，
+        例如“明天下午北京到上海的航班”，系统会解析此次查询的语义，并调起航班搜索对应的action。
+        手表端的SemanticActivity可以响应此action,在选择进入这个Activity后可以看到解析后的语义结果。</string>
+    <!-- SearchActivity -->
+    <string name="title_activity_search">Search</string>
+    <string name="start_search">Start Search Activity</string>
+    <!-- CardActivity -->
+    <string name="title_activity_card">CardActivity</string>
+    <string name="start_card">Start Card Activity</string>
+    <string name="card_text">打开CardActivity后，就可以在手机端的Ticwear助手的快捷卡片管理中，
+        添加或移除本demo中的快捷卡片</string>
+    <!-- NaonaoActivity -->
+    <string name="title_activity_naonao">Naonao</string>
+    <string name="naonao_text">Gesture</string>
+    <string name="start_naonao">Start Naonao Activity</string>
+    <string name="title_activity_ui">UiActivity</string>
+    <string name="start_ui">Start UI demo</string>
+</resources>

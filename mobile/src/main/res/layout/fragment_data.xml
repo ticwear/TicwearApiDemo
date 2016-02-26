@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp">
+
+        <Button
+            android:id="@+id/takePhoto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="39dp"
+            android:text="@string/take_photo" />
+
+        <Button
+            android:id="@+id/sendPhoto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignRight="@+id/takePhoto"
+            android:layout_below="@+id/takePhoto"
+            android:layout_marginLeft="39dp"
+            android:enabled="false"
+            android:text="@string/send_photo" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="29dp"
+            android:layout_marginRight="20dp"
+            android:src="@mipmap/ic_content_picture" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/divider"
+        style="@style/Divider"
+        android:layout_below="@+id/top"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="5dp" />
+
+    <Button
+        android:id="@+id/start_wearable_activity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/divider"
+        android:layout_centerHorizontal="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:enabled="false"
+        android:text="@string/start_wearable_activity" />
+
+    <ListView
+        android:id="@+id/data_item_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/start_wearable_activity"
+        android:transcriptMode="alwaysScroll" />
+</RelativeLayout>

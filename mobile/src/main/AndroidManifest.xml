@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.mobvoi.ticwear.mobvoiapidemo">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@android:style/Theme.Holo.Light.DarkActionBar">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".DataTransferActivity"
+            android:label="@string/data"
+            android:parentActivityName=".MainActivity"
+            android:uiOptions="splitActionBarWhenNarrow">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity
+            android:name=".SensorActivity"
+            android:label="@string/title_activity_sensor"
+            android:parentActivityName=".MainActivity"
+            android:uiOptions="splitActionBarWhenNarrow" />
+        <activity
+            android:name=".GeoActivity"
+            android:label="@string/title_activity_geo"
+            android:parentActivityName=".MainActivity"
+            android:uiOptions="splitActionBarWhenNarrow" />
+        <activity
+            android:name=".StepActivity"
+            android:label="@string/title_activity_step"
+            android:parentActivityName=".MainActivity"
+            android:uiOptions="splitActionBarWhenNarrow" />
+        <activity
+            android:name=".WeatherActivity"
+            android:label="@string/title_activity_weather"
+            android:parentActivityName=".MainActivity"
+            android:uiOptions="splitActionBarWhenNarrow" />
+        <activity
+            android:name=".GestureActivity"
+            android:label="@string/title_activity_gesture"
+            android:parentActivityName=".MainActivity"
+            android:uiOptions="splitActionBarWhenNarrow" />
+        <activity
+            android:name=".VoiceInputActivity"
+            android:label="@string/title_activity_voice_input"
+            android:parentActivityName=".MainActivity"
+            android:uiOptions="splitActionBarWhenNarrow" />
+        <activity
+            android:name=".Text2VoiceActivity"
+            android:label="@string/title_activity_text2_voice"
+            android:parentActivityName=".MainActivity"
+            android:uiOptions="splitActionBarWhenNarrow" />
+        <activity
+            android:name=".SemanticActivity"
+            android:label="@string/title_activity_semantic"
+            android:parentActivityName=".MainActivity"
+            android:uiOptions="splitActionBarWhenNarrow" />
+        <activity
+            android:name=".SearchActivity"
+            android:label="@string/title_activity_search"
+            android:parentActivityName=".MainActivity"
+            android:uiOptions="splitActionBarWhenNarrow" />
+        <activity
+            android:name=".CardActivity"
+            android:label="@string/title_activity_card"
+            android:parentActivityName=".MainActivity"
+            android:uiOptions="splitActionBarWhenNarrow" />
+        <activity
+            android:name=".NaonaoActivity"
+            android:label="@string/title_activity_naonao"
+            android:parentActivityName=".MainActivity"
+            android:uiOptions="splitActionBarWhenNarrow" />
+        <activity
+            android:name=".UiActivity"
+            android:label="@string/title_activity_ui"
+            android:parentActivityName=".MainActivity"
+            android:uiOptions="splitActionBarWhenNarrow" />
+    </application>
+
+</manifest>
