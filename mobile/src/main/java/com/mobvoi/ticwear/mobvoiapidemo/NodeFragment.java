@@ -22,16 +22,16 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class NodeFragment extends Fragment implements View.OnClickListener,
-        MobvoiApiClient.OnConnectionFailedListener {
+        MobvoiApiClient.ConnectionCallbacks, MobvoiApiClient.OnConnectionFailedListener,
+        NodeApi.NodeListener {
+    private final String TAG = "NodeFragment";
 
     private static final int REQUEST_RESOLVE_ERROR = 1000;
-    private final String TAG = "NodeFragment";
 
     private MobvoiApiClient mMobvoiApiClient;
     private Button mCheckBtn;
     private TextView mShowTv;
     private boolean mResolvingError = false;
-    private NodeApi.NodeListener mNodeListener;
     private String mConnectdNode;
 
     @Override
@@ -40,54 +40,11 @@ public class NodeFragment extends Fragment implements View.OnClickListener,
         mCheckBtn = (Button) v.findViewById(R.id.check);
         mShowTv = (TextView) v.findViewById(R.id.text);
         mCheckBtn.setOnClickListener(this);
-        mNodeListener = new NodeApi.NodeListener() {
-            @Override
-            public void onPeerConnected(final Node peer) {
-                Log.d(TAG, "onPeerConnected: " + peer);
-            }
 
-            @Override
-            public void onPeerDisconnected(final Node peer) {
-                Log.d(TAG, "onPeerDisconnected: " + peer);
-            }
-        };
         mMobvoiApiClient = new MobvoiApiClient.Builder(getActivity())
                 .addApi(Wearable.API)
-                .addConnectionCallbacks(new MobvoiApiClient.ConnectionCallbacks() {
-                    @Override
-                    public void onConnected(Bundle connectionHint) {
-                        Log.d(TAG, "onConnected: " + connectionHint);
-                        // Now you can use the Data Layer API
-                        Wearable.NodeApi.addListener(mMobvoiApiClient, mNodeListener);
-                    }
-
-                    @Override
-                    public void onConnectionSuspended(int cause) {
-                        Log.d(TAG, "onConnectionSuspended: " + cause);
-                    }
-                })
-                .addOnConnectionFailedListener(new MobvoiApiClient.OnConnectionFailedListener() {
-                    @Override
-                    public void onConnectionFailed(ConnectionResult result) {
-                        if (mResolvingError) {
-                            // Already attempting to resolve an error.
-                            return;
-                        } else if (result.hasResolution()) {
-                            try {
-                                mResolvingError = true;
-                                Log.d(TAG, "Failing in Connecting");
-                                result.startResolutionForResult(getActivity(), REQUEST_RESOLVE_ERROR);
-                            } catch (IntentSender.SendIntentException e) {
-                                // There was an error with the resolution intent. Try again.
-                                mMobvoiApiClient.connect();
-                                Log.d(TAG, "Try Again");
-                            }
-                        } else {
-                            mResolvingError = false;
-                            Wearable.NodeApi.removeListener(mMobvoiApiClient, mNodeListener);
-                        }
-                    }
-                })
+                .addConnectionCallbacks(this)
+                .addOnConnectionFailedListener(this)
                 .build();
         if (!mResolvingError) {
             mMobvoiApiClient.connect();
@@ -105,7 +62,19 @@ public class NodeFragment extends Fragment implements View.OnClickListener,
         }
     }
 
-    @Override //OnConnectionFailedListener
+    @Override
+    public void onConnected(Bundle bundle) {
+        Log.d(TAG, "onConnected: " + bundle);
+        // Now you can use the Data Layer API
+        Wearable.NodeApi.addListener(mMobvoiApiClient, this);
+    }
+
+    @Override
+    public void onConnectionSuspended(int cause) {
+        Log.d(TAG, "onConnectionSuspended: " + cause);
+    }
+
+    @Override
     public void onConnectionFailed(ConnectionResult result) {
         if (mResolvingError) {
             // Already attempting to resolve an error.
@@ -122,8 +91,18 @@ public class NodeFragment extends Fragment implements View.OnClickListener,
             }
         } else {
             mResolvingError = false;
-            Wearable.NodeApi.removeListener(mMobvoiApiClient, mNodeListener);
+            Wearable.NodeApi.removeListener(mMobvoiApiClient, this);
         }
+    }
+
+    @Override
+    public void onPeerConnected(Node node) {
+        Log.d(TAG, "onPeerConnected: " + node);
+    }
+
+    @Override
+    public void onPeerDisconnected(Node node) {
+        Log.d(TAG, "onPeerDisconnected: " + node);
     }
 
     private Collection<String> getNodes() {

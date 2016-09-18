@@ -1,9 +1,9 @@
 package com.mobvoi.ticwear.mobvoiapidemo;
 
-import android.app.Activity;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -21,7 +21,7 @@ import com.mobvoi.android.wearable.Wearable;
 import java.util.Collection;
 import java.util.HashSet;
 
-public class GeoActivity extends Activity implements MobvoiApiClient.ConnectionCallbacks,
+public class GeoActivity extends AppCompatActivity implements MobvoiApiClient.ConnectionCallbacks,
         MobvoiApiClient.OnConnectionFailedListener, NodeApi.NodeListener, MessageApi.MessageListener {
 
     private static final String START_ACTIVITY_PATH = "/start-location";

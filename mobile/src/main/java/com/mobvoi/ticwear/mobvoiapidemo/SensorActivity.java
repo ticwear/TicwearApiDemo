@@ -1,9 +1,9 @@
 package com.mobvoi.ticwear.mobvoiapidemo;
 
-import android.app.Activity;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -22,7 +22,7 @@ import java.util.Collection;
 import java.util.HashSet;
 
 
-public class SensorActivity extends Activity implements View.OnClickListener,
+public class SensorActivity extends AppCompatActivity implements View.OnClickListener,
         MobvoiApiClient.ConnectionCallbacks, MobvoiApiClient.OnConnectionFailedListener,
         MessageApi.MessageListener, NodeApi.NodeListener {
 

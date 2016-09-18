@@ -1,7 +1,7 @@
 package com.mobvoi.ticwear.mobvoiapidemo;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
@@ -12,7 +12,7 @@ import com.mobvoi.android.wearable.MessageApi;
 import com.mobvoi.android.wearable.MessageEvent;
 import com.mobvoi.android.wearable.Wearable;
 
-public class UiActivity extends Activity implements MobvoiApiClient.OnConnectionFailedListener,
+public class UiActivity extends AppCompatActivity implements MobvoiApiClient.OnConnectionFailedListener,
         MobvoiApiClient.ConnectionCallbacks, MessageApi.MessageListener {
 
     private static final String START_ACTIVITY_PATH = "/start-ui";
