@@ -8,9 +8,9 @@ import android.widget.TextView;
 
 import com.mobvoi.android.common.ConnectionResult;
 import com.mobvoi.android.common.api.MobvoiApiClient;
+import com.mobvoi.android.speech.synthesizer.DefaultSpeechSynthesizerCallback;
 import com.mobvoi.android.speech.synthesizer.SpeechSynthesizerApi;
 import com.mobvoi.android.speech.synthesizer.SpeechSynthesizerCallbackInterface;
-import com.mobvoi.android.speech.synthesizer.internal.DefaultSpeechSynthesizerCallback;
 import com.mobvoi.android.wearable.MessageApi;
 import com.mobvoi.android.wearable.MessageEvent;
 import com.mobvoi.android.wearable.Wearable;

@@ -1,22 +1,22 @@
 package com.mobvoi.ticwear.mobvoiapidemo;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.mobvoi.android.common.ConnectionResult;
 import com.mobvoi.android.common.api.MobvoiApiClient;
+import com.mobvoi.android.speech.synthesizer.DefaultSpeechSynthesizerCallback;
 import com.mobvoi.android.speech.synthesizer.SpeechSynthesizerApi;
 import com.mobvoi.android.speech.synthesizer.SpeechSynthesizerCallbackInterface;
-import com.mobvoi.android.speech.synthesizer.internal.DefaultSpeechSynthesizerCallback;
 import com.mobvoi.android.wearable.Wearable;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Text2VoiceActivity extends Activity implements MobvoiApiClient.ConnectionCallbacks,
+public class Text2VoiceActivity extends AppCompatActivity implements MobvoiApiClient.ConnectionCallbacks,
         MobvoiApiClient.OnConnectionFailedListener {
 
     private static final String TAG = "Text2VoiceActivity";
@@ -34,6 +34,7 @@ public class Text2VoiceActivity extends Activity implements MobvoiApiClient.Conn
     private Button mWearPlay;
     private Button mNextPlay;
     private String mCurJoke;
+
     private SpeechSynthesizerCallbackInterface mTTSCallback = new DefaultSpeechSynthesizerCallback();
 
     @Override

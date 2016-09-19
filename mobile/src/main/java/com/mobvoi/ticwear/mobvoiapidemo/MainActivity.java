@@ -7,14 +7,15 @@
 package com.mobvoi.ticwear.mobvoiapidemo;
 
 import android.app.Activity;
-import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-public class MainActivity extends ListActivity {
+public class MainActivity extends AppCompatActivity implements ListView.OnItemClickListener {
     /**
      * The collection of all samples in the app. This gets instantiated in {@link
      * #onCreate(android.os.Bundle)} because the {@link Sample} constructor needs access to {@link
@@ -43,14 +44,16 @@ public class MainActivity extends ListActivity {
                 new Sample(R.string.title_13, UiActivity.class),
         };
 
-        setListAdapter(new ArrayAdapter<Sample>(this,
+        ListView listView = (ListView) findViewById(android.R.id.list);
+        listView.setAdapter(new ArrayAdapter<Sample>(this,
                 android.R.layout.simple_list_item_1,
                 android.R.id.text1,
                 mSamples));
+        listView.setOnItemClickListener(this);
     }
 
     @Override
-    protected void onListItemClick(ListView listView, View view, int position, long id) {
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         startActivity(new Intent(MainActivity.this, mSamples[position].activityClass));
     }
 

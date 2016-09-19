@@ -1,8 +1,8 @@
 package com.mobvoi.ticwear.mobvoiapidemo;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -17,7 +17,7 @@ import com.mobvoi.android.wearable.Node;
 import com.mobvoi.android.wearable.NodeApi;
 import com.mobvoi.android.wearable.Wearable;
 
-public class NaonaoActivity extends Activity implements MobvoiApiClient.OnConnectionFailedListener,
+public class NaonaoActivity extends AppCompatActivity implements MobvoiApiClient.OnConnectionFailedListener,
         MobvoiApiClient.ConnectionCallbacks, NodeApi.NodeListener, MessageApi.MessageListener {
 
     private static final String TAG = "NaonaoActivity";
