@@ -2,8 +2,8 @@ apply plugin: 'com.android.application'
 apply plugin: 'com.ticwear.application'
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.3"
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
 
     defaultConfig {
         applicationId "com.mobvoi.ticwear.mobvoiapidemo"
@@ -21,9 +21,9 @@ android {
 }
 
 dependencies {
-    compile 'com.ticwear:mobvoi-api:1.0.1'
-    compile 'com.android.support:appcompat-v7:23.1.1'
-    compile 'com.android.support:support-v4:23.1.1'
+    compile "com.ticwear:mobvoi-api:${rootProject.ext.mobvoiApiVersion}"
+    compile "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
+    compile "com.android.support:support-v4:${rootProject.ext.supportLibVersion}"
 
     testCompile 'junit:junit:4.12'
 
