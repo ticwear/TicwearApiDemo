@@ -140,7 +140,7 @@ public class GestureActivity extends Activity implements MobvoiApiClient.Connect
     private void sendMessagetoPhone(String gesture) {
         byte[] data = String.valueOf(gesture).getBytes();
         Wearable.MessageApi.sendMessage(
-                mMobvoiApiClient, DEFAULT_NODE, "Gestures", data).setResultCallback(
+                mMobvoiApiClient, DEFAULT_NODE, "/gestures", data).setResultCallback(
                 new ResultCallback<MessageApi.SendMessageResult>() {
                     @Override
                     public void onResult(MessageApi.SendMessageResult sendMessageResult) {

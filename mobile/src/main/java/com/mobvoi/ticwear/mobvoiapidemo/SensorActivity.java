@@ -93,7 +93,7 @@ public class SensorActivity extends AppCompatActivity implements View.OnClickLis
 
     @Override
     public void onMessageReceived(MessageEvent event) {
-        if (event.getPath().equals("Accelerometer")) {
+        if (event.getPath().equals("/accelerometer")) {
             byte[] data = event.getData();
             final String SensorMessage = new String(data);
             final String[] xyz = SensorMessage.split(",");

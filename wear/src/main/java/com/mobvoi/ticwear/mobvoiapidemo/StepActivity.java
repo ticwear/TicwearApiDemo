@@ -157,7 +157,7 @@ public class StepActivity extends Activity implements MobvoiApiClient.Connection
     private void sendMessagetoPhone() {
         byte[] data = String.valueOf(mSteps).getBytes();
         Wearable.MessageApi.sendMessage(
-                mMobvoiApiClient, DEFAULT_NODE, "Steps", data).setResultCallback(
+                mMobvoiApiClient, DEFAULT_NODE, "/steps", data).setResultCallback(
                 new ResultCallback<MessageApi.SendMessageResult>() {
                     @Override
                     public void onResult(MessageApi.SendMessageResult sendMessageResult) {

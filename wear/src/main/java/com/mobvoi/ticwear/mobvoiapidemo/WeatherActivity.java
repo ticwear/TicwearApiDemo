@@ -184,7 +184,7 @@ public class WeatherActivity extends Activity implements MobvoiApiClient.Connect
     private void sendMessagetoPhone() {
         byte[] data = mInfo.toString().getBytes();
         Wearable.MessageApi.sendMessage(
-                mMobvoiApiClient, DEFAULT_NODE, "Weathers", data).setResultCallback(
+                mMobvoiApiClient, DEFAULT_NODE, "/weathers", data).setResultCallback(
                 new ResultCallback<MessageApi.SendMessageResult>() {
                     @Override
                     public void onResult(MessageApi.SendMessageResult sendMessageResult) {

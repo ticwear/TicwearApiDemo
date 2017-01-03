@@ -134,7 +134,7 @@ public class GeoActivity extends Activity implements ConnectionCallbacks,
         byte[] data = (mLatitude + "," + mLongitude).getBytes();
         if (mConnectedNode != null && mMobvoiApiClient != null && mMobvoiApiClient.isConnected()) {
             Wearable.MessageApi.sendMessage(
-                    mMobvoiApiClient, mConnectedNode, "Location", data)
+                    mMobvoiApiClient, mConnectedNode, "/location", data)
                     .setResultCallback(
                             new ResultCallback<MessageApi.SendMessageResult>() {
                                 @Override

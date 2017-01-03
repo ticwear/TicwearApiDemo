@@ -85,7 +85,7 @@ public class GeoActivity extends AppCompatActivity implements MobvoiApiClient.Co
 
     @Override
     public void onMessageReceived(MessageEvent event) {
-        if (event.getPath().equals("Location")) {
+        if (event.getPath().equals("/location")) {
             Log.d(TAG, "onMessageReceived: " + event);
             byte[] data = event.getData();
             final String datas = new String(data);

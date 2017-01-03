@@ -97,7 +97,7 @@ public class VoiceInputActivity extends AppCompatActivity implements MobvoiApiCl
 
     @Override
     public void onMessageReceived(MessageEvent event) {
-        if (event.getPath().equals("Voice")) {
+        if (event.getPath().equals("/voice")) {
             Log.d(TAG, "onMessageReceived: " + event);
             byte[] data = event.getData();
             final String datas = new String(data);

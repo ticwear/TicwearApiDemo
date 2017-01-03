@@ -97,7 +97,7 @@ public class StepActivity extends AppCompatActivity implements MobvoiApiClient.O
 
     @Override
     public void onMessageReceived(MessageEvent event) {
-        if (event.getPath().equals("Steps")) {
+        if (event.getPath().equals("/steps")) {
             Log.d(TAG, "onMessageReceived: " + event);
             byte[] data = event.getData();
             final String datas = new String(data);

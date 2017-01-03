@@ -97,7 +97,7 @@ public class SearchActivity extends AppCompatActivity implements MobvoiApiClient
 
     @Override
     public void onMessageReceived(MessageEvent event) {
-        if (event.getPath().equals("Search Result")) {
+        if (event.getPath().equals("/search_result")) {
             Log.d(TAG, "onMessageReceived: " + event);
             byte[] data = event.getData();
             final String datas = new String(data);

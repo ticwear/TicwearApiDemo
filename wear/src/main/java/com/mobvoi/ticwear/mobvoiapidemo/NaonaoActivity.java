@@ -122,7 +122,7 @@ public class NaonaoActivity extends Activity implements
     private void sendMessagetoPhone(String naonao) {
         byte[] data = naonao.getBytes();
         Wearable.MessageApi.sendMessage(
-                mMobvoiApiClient, DEFAULT_NODE, "Naonao", data).setResultCallback(
+                mMobvoiApiClient, DEFAULT_NODE, "/naonao", data).setResultCallback(
                 new ResultCallback<MessageApi.SendMessageResult>() {
                     @Override
                     public void onResult(MessageApi.SendMessageResult sendMessageResult) {

@@ -125,7 +125,7 @@ public class SensorActivity extends Activity implements ConnectionCallbacks,
         byte[] data = message.getBytes();
         if (mConnectedNode != null && mMobvoiApiClient != null && mMobvoiApiClient.isConnected()) {
             Wearable.MessageApi.sendMessage(
-                    mMobvoiApiClient, mConnectedNode, "Accelerometer", data)
+                    mMobvoiApiClient, mConnectedNode, "/accelerometer", data)
                     .setResultCallback(
                             new ResultCallback<MessageApi.SendMessageResult>() {
                                 @Override

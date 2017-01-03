@@ -97,7 +97,7 @@ public class GestureActivity extends AppCompatActivity implements MobvoiApiClien
 
     @Override
     public void onMessageReceived(MessageEvent event) {
-        if (event.getPath().equals("Gestures")) {
+        if (event.getPath().equals("/gestures")) {
             Log.d(TAG, "onMessageReceived: " + event);
             byte[] data = event.getData();
             final String datas = new String(data);

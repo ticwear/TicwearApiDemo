@@ -96,7 +96,7 @@ public class VoiceInputActivity extends SpeechRecognitionApi.SpeechRecogActivity
     private void sendMessagetoPhone(String voice) {
         byte[] data = voice.getBytes();
         Wearable.MessageApi.sendMessage(
-                mMobvoiApiClient, DEFAULT_NODE, "Voice", data).setResultCallback(
+                mMobvoiApiClient, DEFAULT_NODE, "/voice", data).setResultCallback(
                 new ResultCallback<MessageApi.SendMessageResult>() {
                     @Override
                     public void onResult(MessageApi.SendMessageResult sendMessageResult) {

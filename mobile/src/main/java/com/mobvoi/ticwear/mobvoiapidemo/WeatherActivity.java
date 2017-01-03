@@ -81,7 +81,7 @@ public class WeatherActivity extends AppCompatActivity implements MobvoiApiClien
 
     @Override
     public void onMessageReceived(MessageEvent event) {
-        if (event.getPath().equals("Weathers")) {
+        if (event.getPath().equals("/weathers")) {
             Log.d(TAG, "onMessageReceived: " + event);
             byte[] data = event.getData();
             final String datas = new String(data);

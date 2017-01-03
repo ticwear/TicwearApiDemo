@@ -117,7 +117,7 @@ public class SearchActivity extends Activity implements MobvoiApiClient.Connecti
     private void sendMessagetoPhone(String result) {
         byte[] data = result.getBytes();
         Wearable.MessageApi.sendMessage(
-                mMobvoiApiClient, DEFAULT_NODE, "Search Result", data).setResultCallback(
+                mMobvoiApiClient, DEFAULT_NODE, "/search_result", data).setResultCallback(
                 new ResultCallback<MessageApi.SendMessageResult>() {
                     @Override
                     public void onResult(MessageApi.SendMessageResult sendMessageResult) {

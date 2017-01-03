@@ -97,7 +97,7 @@ public class NaonaoActivity extends AppCompatActivity implements MobvoiApiClient
 
     @Override
     public void onMessageReceived(MessageEvent event) {
-        if (event.getPath().equals("Naonao")) {
+        if (event.getPath().equals("/naonao")) {
             Log.d(TAG, "onMessageReceived: " + event);
             byte[] data = event.getData();
             final String datas = new String(data);
