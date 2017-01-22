@@ -320,6 +320,7 @@ public class DataFragment extends Fragment implements View.OnClickListener,
      */
     private void sendPhoto(Asset asset) {
         PutDataMapRequest dataMap = PutDataMapRequest.create(IMAGE_PATH);
+        dataMap.setUrgent();
         dataMap.getDataMap().putAsset(IMAGE_KEY, asset);
         dataMap.getDataMap().putLong("time", new Date().getTime());
         PutDataRequest request = dataMap.asPutDataRequest();
@@ -426,6 +427,7 @@ public class DataFragment extends Fragment implements View.OnClickListener,
         @Override
         public void run() {
             PutDataMapRequest putDataMapRequest = PutDataMapRequest.create(COUNT_PATH);
+            putDataMapRequest.setUrgent();
             putDataMapRequest.getDataMap().putInt(COUNT_KEY, count++);
             PutDataRequest request = putDataMapRequest.asPutDataRequest();
 
