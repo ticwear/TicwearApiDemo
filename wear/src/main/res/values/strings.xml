@@ -48,4 +48,7 @@
     <string name="rect_text">This is rect layout</string>
     <string name="title_activity_warn">WarnActivity</string>
     <string name="warn_text">请打开语音助手，查询航班，结果会展示在此页面</string>
+    <string name="get_last_location">getLastLocation</string>
+    <string name="request_location">requestLocation</string>
+    <string name="permission_denied">The permission is denied.</string>
 </resources>

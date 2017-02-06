@@ -101,7 +101,7 @@ public class DataLayerListenerService extends WearableListenerService {
                 break;
             }
             case START_LOCATION_PATH: {
-                Intent sensorIntent = new Intent(this, GeoActivity.class);
+                Intent sensorIntent = new Intent(this, LocationActivity.class);
                 sensorIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(sensorIntent);
                 Log.d(TAG, "MessageReceived! Open Location!");

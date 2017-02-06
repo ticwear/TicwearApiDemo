@@ -13,6 +13,8 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:name=".ApiDemoApplication"
@@ -42,7 +44,7 @@
             android:name=".SensorActivity"
             android:label="@string/title_activity_sensor" />
         <activity
-            android:name=".GeoActivity"
+            android:name=".LocationActivity"
             android:label="@string/title_activity_geo" />
         <activity
             android:name=".StepActivity"

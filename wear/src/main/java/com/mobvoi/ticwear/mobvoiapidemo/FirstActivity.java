@@ -48,7 +48,7 @@ public class FirstActivity extends Activity implements WearableListView.ClickLis
                 break;
             }
             case 2: {
-                Intent sensorIntent = new Intent(this, GeoActivity.class);
+                Intent sensorIntent = new Intent(this, LocationActivity.class);
                 sensorIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(sensorIntent);
                 Log.d(TAG, "MessageReceived! Open Location!");
